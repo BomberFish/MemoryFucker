@@ -10,10 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Button(action: {
+                // memory fucking code
+                let window = UIApplication.shared.keyWindow
+                while true && window != nil {
+                    window?.snapshotView(afterScreenUpdates: false)
+                }
+            }, label: {
+                Label("Fuck Memory!", systemImage: "memorychip")
+                    .padding()
+            })
         }
         .padding()
     }
